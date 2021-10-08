@@ -2,6 +2,7 @@
   --primmary-text-color: #212121;
   --secondary-text-color: #757575;
   --accent-color: #2196f3;
+  --accent-hover-color: #188ce8;
   --primary-white-color: #ffffff;
   --primary-bg-color: #2f303a;
   --secondary-bg-color: #e5e5e5;
@@ -9,12 +10,6 @@
   --icon-primary-color: #afb1b8;
 
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 img {
@@ -38,6 +33,10 @@ p {
   margin: 0;
 }
 
+input {
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -55,9 +54,10 @@ p {
   padding-right: 15px;
 }
 
-.site-nav-link.current {
-  color: var(--accent-color);
-  background-color: var(--primary-white-color);
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* BUTTON */
@@ -86,7 +86,7 @@ p {
   min-width: 200px;
   height: 50px;
 
-  transition: color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
 }
 
 .button.second {
@@ -98,13 +98,13 @@ p {
   display: inline-block;
   padding: 6px 22px;
   height: 38px;
-  transition: color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 .button.primary:hover,
 .button.primary:focus {
-  color: var(--accent-color);
-  background-color: var(--primary-white-color);
+  background-color: var(--accent-hover-color);
 }
 
 .button.second:hover,
@@ -122,6 +122,10 @@ p {
   justify-content: center;
   align-items: center;
   transition: background-color 250ms var(--timing-function);
+}
+
+.button.primary.button-modal {
+  width: 200px;
 }
 
 /* MODAL */
@@ -166,6 +170,8 @@ p {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  padding: 40px;
 }
 
 .modal-button-close {
@@ -203,11 +209,115 @@ p {
 .modal-form {
   display: flex;
   flex-direction: column;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
 
   /* min-width: 528px;
   min-height: 581px;
   padding: 40px; */
 }
+
+.modal-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+
+  margin-bottom: 12px;
+}
+
+.modal-input {
+  width: 448px;
+  height: 40px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  margin-bottom: 10px;
+  padding: 11px 12px;
+  padding-left: 42px;
+
+  transition: border 250ms var(--timing-function);
+}
+
+.modal-input.comment-text {
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+}
+
+.modal-label {
+  font-size: 12px;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--secondary-text-color);
+
+  margin-bottom: 4px;
+}
+
+.modal-form-icon {
+  position: absolute;
+  left: 12px;
+
+  top: 57%;
+  transform: translateY(-57%);
+  transition: fill 250ms var(--timing-function);
+}
+
+.modal-field:hover .modal-input,
+.modal-field:focus-within .modal-input {
+  border: 1px solid var(--accent-color);
+  outline: none;
+}
+/* .modal-field:hover .modal-form-icon,
+.modal-field:focus .modal-form-icon {
+  fill: var(--accent-color);
+
+} */
+
+.modal-field:hover .modal-form-icon,
+.modal-field:focus-within .modal-form-icon {
+  fill: var(--accent-color);
+}
+
+.checkbox-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.checkbox-input {
+  margin-right: 7px;
+}
+
+.checkbox-text {
+  line-height: 1.71;
+  color: var(--secondary-text-color);
+}
+
+.checkbox-link {
+  text-decoration-line: underline;
+  color: var(--accent-color);
+}
+
+.button-modal {
+  background-color: #188ce8;
+  /* transition: color 250ms var(--timing-function), box-shadow 250ms var(--timing-function); */
+
+  padding: 10px 56px;
+  /* min-width: 200px;
+  height: 50px; */
+}
+
 /* BODY */
 
 body {
@@ -281,6 +391,11 @@ body {
   text-align: center;
 
   transition: color 250ms var(--timing-function);
+}
+
+.site-nav-link.current {
+  color: var(--accent-color);
+  background-color: var(--primary-white-color);
 }
 
 .site-nav-link.current::after {
