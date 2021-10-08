@@ -130,7 +130,7 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
 
   width: 100%;
   height: 100%;
@@ -200,7 +200,14 @@ p {
   display: block; */
   fill: currentColor;
 }
+.modal-form {
+  display: flex;
+  flex-direction: column;
 
+  /* min-width: 528px;
+  min-height: 581px;
+  padding: 40px; */
+}
 /* BODY */
 
 body {
@@ -649,7 +656,8 @@ body {
 }
 
 .footer-social-block {
-  margin-right: 93px;
+  padding-top: 12px;
+  /* margin-right: 93px; */
 }
 
 .footer-social-list {
@@ -696,6 +704,11 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+
+.footer-form-block {
+  padding-top: 12px;
+  margin-left: auto;
 }
 
 .footer-form {
