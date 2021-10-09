@@ -1017,6 +1017,7 @@ body {
   background: rgba(33, 150, 243, 0.9);
 }
 
-.work-list-link:hover .work-list-overlay {
+.work-list-link:hover .work-list-overlay,
+.work-list-link:focus .work-list-overlay {
   transform: translateY(0);
 }
