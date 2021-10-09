@@ -293,10 +293,41 @@ input {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
-.checkbox-input {
+/* .checkbox-input { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+} */
+
+.checkbox-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 15px;
+  height: 15px;
+
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--primmary-text-color);
+  border-radius: 1px;
+
   margin-right: 7px;
+
+  transition: background-color 250ms var(--timing-function), border 250ms var(--timing-function);
+}
+
+.checkbox-input:checked + .checkbox-thumb {
+  background-color: var(--accent-hover-color);
+  border: 1px solid var(--accent-hover-color);
+}
+
+.checkbox-icon {
+  fill: var(--primary-white-color);
 }
 
 .checkbox-text {
