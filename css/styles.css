@@ -125,7 +125,6 @@ input {
 }
 
 .button.primary.button-modal {
-  width: 200px;
 }
 
 /* MODAL */
@@ -205,6 +204,10 @@ input {
   height: 100%;
   display: block; */
   fill: currentColor;
+}
+
+.modal-button-close:hover .modal-icon {
+  fill: var(--primary-white-color);
 }
 
 .modal-title {
